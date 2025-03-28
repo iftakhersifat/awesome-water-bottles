@@ -41,12 +41,28 @@ const Bottles = ({bottlesPromise}) => {
         const showBottle = [...showBottles, bottle];
         setShowBottles(showBottle);
     }
+
+    // remove cart
+    const handleRemoveCart = (id) => {
+        // Remove from addedCart
+        const updatedCart = addedCart.filter(bottle => bottle.id !== id);
+        setAddedCart(updatedCart);
+    
+        // Remove from showBottles
+        const updatedShowBottles = showBottles.filter(bottle => bottle.id !== id);
+        setShowBottles(updatedShowBottles);
+    };
+    
+
     return (
         <div className='bottles-div'>
             <h1>Bottles: {bottles.length}</h1>
             <h4>Added to Cart : {addedCart.length}</h4>
             {
-                showBottles.map(bottle=> <img className='img' src={bottle.img}></img>)
+                showBottles.map(bottle=> <div>
+                    <img className='img' src={bottle.img}></img> 
+                    <button onClick={() => handleRemoveCart(bottle.id)}>x</button>
+                    </div>)
             }
             <div className='bottles'>
             {
