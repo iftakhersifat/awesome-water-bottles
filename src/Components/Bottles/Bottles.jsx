@@ -6,7 +6,7 @@ const Bottles = ({bottlesPromise}) => {
     const bottles=use(bottlesPromise);
     console.log(bottles);
     return (
-        <div>
+        <div className='bottles-div'>
             <h1>Bottles: {bottles.length}</h1>
             <div className='bottles'>
             {

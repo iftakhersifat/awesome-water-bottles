@@ -1,5 +1,9 @@
 .bottles{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.bottles-div{
+    font-family: Arial, Helvetica, sans-serif;
 }
