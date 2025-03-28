@@ -1,9 +1,13 @@
 import React from 'react';
 import './Bottle.css'
 
-const Bottle = ({bottle}) => {
+const Bottle = ({bottle, handleCart}) => {
     console.log(bottle);
     const {img, name, price, stock, ratings}=bottle;
+
+    const handleAddedToCart =()=>{
+        handleCart(bottle)
+    }
     return (
         <div className='bottle'>
             <img src={img} />
@@ -11,7 +15,7 @@ const Bottle = ({bottle}) => {
             <p>${price}</p>
             <p>Ratings: {`⭐ ${ratings}`}</p>
             <h4>{stock} remaining</h4>
-            <button>{`🛒 Buy Now`}</button>
+            <button onClick={handleAddedToCart}>{`🛒 Buy Now`}</button>
         </div>
     );
 };
