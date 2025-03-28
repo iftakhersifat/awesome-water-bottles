@@ -10,7 +10,7 @@ const addItem =(id)=>{
     const getCart = getCartFromLS();
     const newCart = [...getCart, id];
 
-    //save new cart to the LS
+    // save new cart to the LS
     saveCartToLS(newCart);
 }
 const saveCartToLS=(cart)=>{

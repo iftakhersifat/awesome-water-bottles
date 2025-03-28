@@ -1,6 +1,7 @@
 import React, { use, useState } from 'react';
 import Bottle from '../Bottle/Bottle';
 import "./Bottles.css"
+import { addItem } from '../LocalStorage/Localstorage';
 
 const Bottles = ({bottlesPromise}) => {
     const bottles=use(bottlesPromise);
@@ -11,6 +12,9 @@ const Bottles = ({bottlesPromise}) => {
     const handleCart=(bottle)=>{
         const countCart = [...addedCart, bottle];
         setAddedCart(countCart);
+
+        // save the bottle id
+        addItem(bottle.id);
     }
     return (
         <div className='bottles-div'>
