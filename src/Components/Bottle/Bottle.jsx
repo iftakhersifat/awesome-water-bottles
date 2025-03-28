@@ -2,7 +2,7 @@ import React from 'react';
 import './Bottle.css'
 
 const Bottle = ({bottle, handleCart}) => {
-    console.log(bottle);
+    // console.log(bottle);
     const {img, name, price, stock, ratings}=bottle;
 
     const handleAddedToCart =()=>{
