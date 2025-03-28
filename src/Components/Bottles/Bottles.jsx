@@ -33,15 +33,27 @@ const Bottles = ({bottlesPromise}) => {
         // save the bottle id
         addItem(bottle.id);
     }
+
+
+    // show bottles
+    const [showBottles, setShowBottles] = useState([]);
+    const handleShowBottles =(bottle)=>{
+        const showBottle = [...showBottles, bottle];
+        setShowBottles(showBottle);
+    }
     return (
         <div className='bottles-div'>
             <h1>Bottles: {bottles.length}</h1>
             <h4>Added to Cart : {addedCart.length}</h4>
+            {
+                showBottles.map(bottle=> <img className='img' src={bottle.img}></img>)
+            }
             <div className='bottles'>
             {
                 bottles.map(bottle=> <Bottle 
                     key={bottle.id} 
                     handleCart={handleCart}
+                    handleShowBottles={handleShowBottles}
                     bottle={bottle}></Bottle>)
             }
             </div>
