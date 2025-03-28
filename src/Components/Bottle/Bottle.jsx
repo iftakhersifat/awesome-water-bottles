@@ -11,6 +11,7 @@ const Bottle = ({bottle}) => {
             <p>${price}</p>
             <p>Ratings: {`⭐ ${ratings}`}</p>
             <h4>{stock} remaining</h4>
+            <button>{`🛒 Buy Now`}</button>
         </div>
     );
 };
